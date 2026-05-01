@@ -39,8 +39,8 @@ jobs:
     uses: lubos-zavazan/shared-workflows/.github/workflows/reusable-deploy-shared-repo.yml.yml@main
     with:
       package-name: .net-app
-      app-name: appsvc1
-      deployment-slot: development
+      app-name: sampleappgh
+      deployment-slot: production
     secrets:
       azure-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
 
