@@ -33,16 +33,16 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}\myapp
 
-call-reusable-deployment-workflow-job:
-  needs: build-job
+  call-reusable-deployment-workflow-job:
+    needs: build-job
 
-  uses: ./.github/workflows/reusable-deploy.yml
-  with:
-    package-name: .net-app
-    app-name: appsvc1
-    deployment-slot: development
-  secrets:
-    azure-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+    uses: ./.github/workflows/reusable-deploy.yml
+    with:
+      package-name: .net-app
+      app-name: appsvc1
+      deployment-slot: development
+    secrets:
+      azure-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
 
 
     
