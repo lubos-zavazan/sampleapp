@@ -31,7 +31,7 @@ jobs:
         with:
           # Artifact name
           name: .net-app
-          path: ${{ envrunner.temp }}\myapp
+          path: ${{ runner.temp }}\myapp
 
   deploy_job:
     runs-on: windows-latest
