@@ -9,7 +9,7 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }} # Only run if on the main branch
     
     steps:
-      - run: env
+      - run: env | sort
         
 # print triggering event name
 
@@ -35,7 +35,7 @@ jobs:
     runs-on: windows-latest
     
     steps:
-      - run: env
+      - run: env | sort
 
 # print triggering event name
 
