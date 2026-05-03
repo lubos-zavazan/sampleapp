@@ -1,21 +1,23 @@
 name: Debug Workflow 1
 
-on:
-  workflow_dispatch:
+on: [push, pull_request, issues, workflow_dispatch]
 
 jobs:
   build-job:
     runs-on: windows-latest
 
     steps:
-      
+
+      - name: check event name
+        run: echo "Event that triggered the workflow is ${{ githug.event_name }}
+        
       - name: checkout code
         uses: actions/checkout@v4.1.7
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4.0.1
         with:
-          dotnet-version: '18.x'
+          dotnet-version: '8.x'
 
       - name: Build code
         run: dotnet build --configuration Release
